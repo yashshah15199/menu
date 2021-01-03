@@ -3,14 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormGroup from '@material-ui/core/FormGroup';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
+import "./Header.css"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,7 +38,7 @@ export default function MenuAppBar() {
   return (
     <div className={classes.root}>
       
-      <AppBar position="static" style={{backgroundColor:"#8d1a2b", padding:"3%"}}>
+      <AppBar className="head" position="static" style={{backgroundColor:"#8d1a2b"}}>
         <Toolbar>
           
           <Typography variant="h5" className={classes.title} style={{margin:"0 auto", display:"flex", justifyContent:"center", alignItems:"center"}}>

@@ -29,11 +29,12 @@ export default function ControlledAccordions(props) {
     
   const classes = useStyles();
   const [data,setData]=React.useState(props.data)
+  console.log(data)
   useEffect(() => {
       if(props.data)
        { setData(props.data)}
   }, [props.data])
-  const [expanded, setExpanded] = React.useState('panel1');
+  const [expanded, setExpanded] = React.useState('panel0');
 console.log("2",data)
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -41,20 +42,25 @@ console.log("2",data)
 
   return (
     <div className={classes.root} >
-      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon style={{color:"white"}} />}
-          aria-controls="panel1bh-content"
-          id="panel1bh-header"
-          style={{backgroundColor:"#8d1a2b"}}
-        >
-          <Typography variant="h5" style={{alignContent:'center', color:"white"}}>Pizza</Typography>
-          {/* <Typography className={classes.secondaryHeading}>I am an accordion</Typography> */}
-        </AccordionSummary>
-        <AccordionDetails>
-         <List data={props.data}/>
-        </AccordionDetails>
-      </Accordion>
+      {Object.keys(data).map((fld,index)=>{return(
+        <div style={{marginTop:"2%"}}>
+         <Accordion expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)} >
+         <AccordionSummary
+           expandIcon={<ExpandMoreIcon style={{color:"white"}} />}
+           aria-controls="panel1bh-content"
+           id="panel1bh-header"
+           style={{backgroundColor:"#8d1a2b"}}
+         >
+           <Typography variant="h5" style={{alignContent:'center', color:"white"}}>{fld}</Typography>
+           {/* <Typography className={classes.secondaryHeading}>I am an accordion</Typography> */}
+         </AccordionSummary>
+         <AccordionDetails>
+          <List data={props.data[fld]}/>
+         </AccordionDetails>
+       </Accordion> 
+      </div>
+      )})}
+     
        </div>
   );
 }
