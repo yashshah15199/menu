@@ -11,12 +11,16 @@ let Data=[
   {name:"margerate pizza",value:200,description:"double cheese with olives"}
 ]
 function App() {
-  const [list,setList]=useState(Data)
+  let adata=Data
+  const [list,setList]=useState(adata)
 
   const handleSearch=(value)=>{
     console.log("here",value)
     let arr=Data.filter((fld)=>{
-      if(fld.name.includes(fld)){return 1}
+      console.log("fld",fld)
+      if(fld.name.includes(value)){
+        console.log("fld1",fld)
+        return 1}
     })
     console.log(arr)
     setList(arr)

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
@@ -24,10 +24,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ControlledAccordions(props) {
-    const data=props.data;
+    
   const classes = useStyles();
+  const [data,setData]=React.useState(props.data)
+  useEffect(() => {
+      if(props.data)
+       { setData(props.data)}
+  }, [props.data])
   const [expanded, setExpanded] = React.useState(false);
-
+console.log("2",data)
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
@@ -44,7 +49,7 @@ export default function ControlledAccordions(props) {
           {/* <Typography className={classes.secondaryHeading}>I am an accordion</Typography> */}
         </AccordionSummary>
         <AccordionDetails>
-         <List data={data}/>
+         <List data={props.data}/>
         </AccordionDetails>
       </Accordion>
        </div>

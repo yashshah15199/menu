@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -22,6 +22,11 @@ const useStyles = makeStyles((theme) => ({
 export default function AlignItemsList(props) {
   const classes = useStyles();
 const [data,setData]=useState(props.data?props.data:[""])
+console.log("3",data,props.data)
+useEffect(() => {
+    if(props.data)
+     { setData(props.data)}
+}, [props.data])
   return (
     <List className={classes.root}>
         {data.map((fld)=>{
