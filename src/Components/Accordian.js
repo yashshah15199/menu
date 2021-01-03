@@ -10,7 +10,9 @@ import List from "./List"
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
+    width: '99%',
+    marginRight:"1%",
+    marginLeft:"1%"
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
@@ -38,14 +40,15 @@ console.log("2",data)
   };
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} >
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon style={{color:"white"}} />}
           aria-controls="panel1bh-content"
           id="panel1bh-header"
+          style={{backgroundColor:"#8d1a2b"}}
         >
-          <Typography className={classes.heading} style={{alignContent:'center'}}>Pizza</Typography>
+          <Typography variant="h5" style={{alignContent:'center', color:"white"}}>Pizza</Typography>
           {/* <Typography className={classes.secondaryHeading}>I am an accordion</Typography> */}
         </AccordionSummary>
         <AccordionDetails>

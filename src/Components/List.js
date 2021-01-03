@@ -47,11 +47,11 @@ return(
       >
        {fld.description} 
       </Typography>
-     &nbsp;&nbsp; Rs.{fld.value}
+      
     </React.Fragment>
     
   }
-/>
+/>Rs.{fld.value}
 </ListItem>
 <Divider variant="inset" component="li" />
 </div>
