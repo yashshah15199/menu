@@ -15,10 +15,10 @@ function App() {
   const [list,setList]=useState(adata)
 
   const handleSearch=(value)=>{
-    console.log("here",value)
+    
     let arr=Data.filter((fld)=>{
       console.log("fld",fld)
-      if(fld.name.includes(value)){
+      if(fld.name.toLowerCase().includes(value.toLowerCase())){
         console.log("fld1",fld)
         return 1}
     })
