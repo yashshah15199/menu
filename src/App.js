@@ -7,7 +7,7 @@ import Search from "./Components/TextSearch";
 import Accordian from "./Components/Accordian";
 import Header from "./Components/Header";
 import Slider from "./Components/Slider";
-// import Footer from "./Components/Footer"
+import Footer from "./Components/Footer"
 
 let Data = {
   Pizza: [
@@ -52,7 +52,7 @@ function App() {
         <Slider />
         <Search handleSearch={handleSearch} />
         <Accordian data={list} />
-        {/* <Footer/> */}
+        <Footer/>
       </div>
     </div>
   );

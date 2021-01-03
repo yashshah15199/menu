@@ -1,0 +1,44 @@
+.display-tray {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+img {
+    vertical-align: top;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.pizza-image img {
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+.pizza-image {
+    text-align: center;
+}
+.menu-list .accordion-body {
+    padding: 10px;
+}
+.my-tray button.accordion-button{
+    background-color: #8d1a2b;
+    color: aliceblue;
+}
+.logo {
+    max-width: 30%;
+    padding-bottom: 4%;
+}
+.location-w {
+    display: flex;
+}
+.location-icon {
+    padding-right: 16px;
+}
+.location-text a {
+    text-decoration: none;
+    color: white;
+}
+.foooter-up {
+    background-color: #8d1a2b;
+    padding: 2%;
+}

@@ -9,9 +9,9 @@ import List from "./List";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "99%",
-    marginRight: "1%",
-    marginLeft: "1%",
+    width: "100%",
+    // marginRight: "1%",
+    // marginLeft: "1%",
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
