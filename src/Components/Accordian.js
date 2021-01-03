@@ -31,7 +31,7 @@ export default function ControlledAccordions(props) {
       if(props.data)
        { setData(props.data)}
   }, [props.data])
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = React.useState(true);
 console.log("2",data)
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
