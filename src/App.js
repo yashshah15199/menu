@@ -22,15 +22,16 @@ function App() {
   const [list,setList]=useState(adata)
 
   const handleSearch=(value)=>{
-    
-    let arr=Data.filter((fld)=>{
-      console.log("fld",fld)
-      if(fld.name.toLowerCase().includes(value.toLowerCase())){
-        console.log("fld1",fld)
-        return 1}
+    let adata={}
+    Object.keys(Data).map((fld)=>{
+      let arr=Data[fld].filter((fld)=>{
+        if(fld.name.toLowerCase().includes(value.toLowerCase())){
+          return 1}
+      })
+      adata[fld]=arr
     })
-    console.log(arr)
-    setList(arr)
+    
+    setList(adata)
   }
  
   return (

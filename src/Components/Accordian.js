@@ -42,25 +42,32 @@ console.log("2",data)
 
   return (
     <div className={classes.root} >
-      {Object.keys(data).map((fld,index)=>{return(
-        <div style={{marginTop:"2%"}}>
-         <Accordion expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)} >
-         <AccordionSummary
-           expandIcon={<ExpandMoreIcon style={{color:"white"}} />}
-           aria-controls="panel1bh-content"
-           id="panel1bh-header"
-           style={{backgroundColor:"#8d1a2b"}}
-         >
-           <Typography variant="h5" style={{alignContent:'center', color:"white"}}>{fld}</Typography>
-           {/* <Typography className={classes.secondaryHeading}>I am an accordion</Typography> */}
-         </AccordionSummary>
-         <AccordionDetails>
-          <List data={props.data[fld]}/>
-         </AccordionDetails>
-       </Accordion> 
-      </div>
-      )})}
+      {Object.keys(data).map((fld,index)=>{
+        if(props.data[fld].length>0){
+          return(
+            <div style={{marginTop:"2%"}}>
+             <Accordion expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)} >
+             <AccordionSummary
+               expandIcon={<ExpandMoreIcon style={{color:"white"}} />}
+               aria-controls="panel1bh-content"
+               id="panel1bh-header"
+               style={{backgroundColor:"#8d1a2b"}}
+             >
+               <Typography variant="h5" style={{alignContent:'center', color:"white"}}>{fld}</Typography>
+               {/* <Typography className={classes.secondaryHeading}>I am an accordion</Typography> */}
+             </AccordionSummary>
+             <AccordionDetails>
+              <List data={props.data[fld]}/>
+             </AccordionDetails>
+           </Accordion> 
+          </div>
+          )
+        }
+        })
+      }
      
        </div>
   );
 }
+
+
