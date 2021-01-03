@@ -6,6 +6,7 @@ import "./style.css"
 import Search from "./Components/TextSearch"
 import Accordian from "./Components/Accordian"
 import Header from "./Components/Header"
+import Slider from "./Components/Slider"
 
 let Data=[
   {name:"pizza",value:100,description:"double cheese with olives"},
@@ -31,6 +32,7 @@ function App() {
     <div className="App">
      <div style={{marginRight:"1%"}}>
        <Header/>
+       <Slider/>
        <Search handleSearch={handleSearch}/>
        <Accordian data={list}/>
      </div>
