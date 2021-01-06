@@ -59,14 +59,14 @@ function SingleAcc(props) {
         onChange={handleChange(`panel`)}
       >
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
+          expandIcon={<ExpandMoreIcon style={{ color: DataObj.fontColor }} />}
           aria-controls="panel1bh-content"
           id="panel1bh-header"
           style={{ backgroundColor: DataObj.backGroundColor }}
         >
           <Typography
             variant="h5"
-            style={{ alignContent: "center", color: "white" }}
+            style={{ alignContent: "center", color: DataObj.fontColor }}
           >
             {props.fld}
           </Typography>
