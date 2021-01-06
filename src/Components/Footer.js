@@ -25,15 +25,15 @@ function Footer() {
              
               <div class="location-w mb-3">
                 <div class="location-icon"><PinDropIcon style={{color:DataObj.fontColor}}></PinDropIcon></div>
-               <div class="location-text"><a href="#">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam totam dicta nihil, sequi perferendis eligendi ipsam voluptatibus similique sapiente eos earum optio nemo laborum et saepe autem illum, itaque harum?</a></div>
+               <div class="location-text" style={{color:DataObj.fontColor, fontColor:"white", textDecoration:"none",cursor:"pointer"}}><a >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam totam dicta nihil, sequi perferendis eligendi ipsam voluptatibus similique sapiente eos earum optio nemo laborum et saepe autem illum, itaque harum?</a></div>
               </div>
               <div class="location-w mb-3">
                 <div class="location-icon"><CallIcon style={{color:DataObj.fontColor}}/></div>
-               <div class="location-text"><a href=".#" class="tel:+7265985208">+7265985208</a></div>
+               <div class="location-text" style={{color:DataObj.fontColor, fontColor:"white", textDecoration:"none", cursor:"pointer"}}><a >+7265985208</a></div>
               </div>
               <div class="location-w mb-3">
                 <div class="location-icon"><MailIcon style={{color:DataObj.fontColor}}/></div>
-               <div class="location-text"><a href="mailto:yash@gmail.com">yash@gmail.com</a></div>
+               <div class="location-text" style={{color:DataObj.fontColor, fontColor:"white", textDecoration:"none",cursor:"pointer"}}><a onClick={()=>{window.open("mailto:yash@gmail.com")}}>yash@gmail.com</a></div>
               </div>
               
              

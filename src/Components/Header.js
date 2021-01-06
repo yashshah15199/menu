@@ -52,6 +52,7 @@ export default function MenuAppBar() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              color:DataObj.fontColor
             }}
           >
             {DataObj.firmName}
