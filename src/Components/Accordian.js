@@ -6,6 +6,7 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import List from "./List";
+import DataObj from "../Data"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -61,7 +62,7 @@ function SingleAcc(props) {
           expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
           aria-controls="panel1bh-content"
           id="panel1bh-header"
-          style={{ backgroundColor: "#8d1a2b" }}
+          style={{ backgroundColor: DataObj.backGroundColor }}
         >
           <Typography
             variant="h5"

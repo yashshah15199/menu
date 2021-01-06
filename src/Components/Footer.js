@@ -1,5 +1,8 @@
 import React from 'react'
 import "./Footer.css"
+import PinDropIcon from '@material-ui/icons/PinDrop';
+import CallIcon from '@material-ui/icons/Call';
+import MailIcon from '@material-ui/icons/Mail';
 
 function Footer() {
     return (
@@ -20,15 +23,15 @@ function Footer() {
             <div class="social-icons">
              
               <div class="location-w mb-3">
-                <div class="location-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                <div class="location-icon"><PinDropIcon style={{color:"white"}}></PinDropIcon></div>
                <div class="location-text"><a href="#">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam totam dicta nihil, sequi perferendis eligendi ipsam voluptatibus similique sapiente eos earum optio nemo laborum et saepe autem illum, itaque harum?</a></div>
               </div>
               <div class="location-w mb-3">
-                <div class="location-icon"><i class="fa fa-mobile" aria-hidden="true"></i></div>
+                <div class="location-icon"><CallIcon style={{color:"white"}}/></div>
                <div class="location-text"><a href=".#" class="tel:+7265985208">+7265985208</a></div>
               </div>
               <div class="location-w mb-3">
-                <div class="location-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                <div class="location-icon"><MailIcon style={{color:"white"}}/></div>
                <div class="location-text"><a href="mailto:yash@gmail.com">yash@gmail.com</a></div>
               </div>
               

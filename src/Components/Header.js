@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+import DataObj from "../Data"
 import "./Header.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -40,7 +41,7 @@ export default function MenuAppBar() {
       <AppBar
         className="head"
         position="static"
-        style={{ backgroundColor: "#8d1a2b" }}
+        style={{ backgroundColor: DataObj.backGroundColor }}
       >
         <Toolbar>
           <Typography
@@ -53,7 +54,7 @@ export default function MenuAppBar() {
               alignItems: "center",
             }}
           >
-            Menuu
+            {DataObj.firmName}
           </Typography>
         </Toolbar>
       </AppBar>
