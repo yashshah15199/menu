@@ -51,7 +51,7 @@ const handleDrawerClose=()=>{
         style={{ backgroundColor: DataObj.backGroundColor }}
       >
         <Toolbar>
-          {props.name&&(
+          {props.name&& props.isLogin &&(
             <IconButton edge="start" className={classes.menuButton} color="inherit" 
             aria-label="menu" onClick={()=>{setOpenMenu(true)}}>
                 <MenuIcon />
