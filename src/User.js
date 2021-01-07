@@ -1,0 +1,44 @@
+import React, { useState } from "react";
+
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./style.css";
+import Search from "./Components/TextSearch";
+import Accordian from "./Components/Accordian";
+import Header from "./Components/Header";
+import Slider from "./Components/Slider";
+import Footer from "./Components/Footer"
+import DataObj from "./Data";
+
+function App() {
+  let adata = DataObj.data;
+  const [list, setList] = useState(adata);
+
+  const handleSearch = (value) => {
+    let adata = {};
+    Object.keys(adata).map((fld) => {
+      let arr = adata[fld].filter((fld) => {
+        if (fld.name.toLowerCase().includes(value.toLowerCase())) {
+          return 1;
+        }
+      });
+      adata[fld] = arr;
+    });
+
+    setList(adata);
+  };
+
+  return (
+    <div className="App">
+      <div>
+        <Header />
+        <Slider />
+        <Search handleSearch={handleSearch} />
+        <Accordian data={list} />
+        <Footer/>
+      </div>
+    </div>
+  );
+}
+
+export default App;
