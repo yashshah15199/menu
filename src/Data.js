@@ -1,6 +1,7 @@
 const DataObj ={
     backGroundColor:"#8d1a2b",
     fontColor:"white",//font color in headings and bg portion
+    sliderData:[{image:"",title:"",subtitle:""},{image:"",title:"",subtitle:""},{image:"",title:"",subtitle:""}],
     data:{
         Pizza: [
           { name: "pizza", value: 100, description: "double cheese with olives" },

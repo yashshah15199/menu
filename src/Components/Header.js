@@ -89,7 +89,7 @@ const handleDrawerClose=()=>{
         <Divider />
         <List>
           {[{name:"Theme",Icon:""},{name:"Products",Icon:""},{name:"Company Info",Icon:""}].map((fld, index) => (
-            <ListItem button key={index}>
+            <ListItem button key={index} onClick={()=>{props.handleSelectedMenu(index)}}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={fld.name} />
             </ListItem>
