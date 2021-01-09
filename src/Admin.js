@@ -10,8 +10,8 @@ function Admin() {
         setIsLogin(value);
     }
     const handleSelectedMenu=(menu)=>{
-        console.log(menu)
-        setSelectedMenu(menu)
+        console.log(menu+1)
+        setSelectedMenu(menu+1)
     }
     return (
         <div>

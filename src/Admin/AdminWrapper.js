@@ -1,23 +1,27 @@
 import React from 'react'
+import Form from "../Form";
+import JSON from "../formJson.json"
 
 function AdminWrapper(props) {
-    console.log("rrr",props)
-    if(props.selectedMenu===0){
+    console.log("rrr",props,JSON)
+    if(props.selectedMenu===1){
        
         return (
             <div>
-                abc
+               <Form
+                    fldArr={JSON["Theme"].fields}
+               />
             </div>
         )
     }
-    else if(props.selectedMenu===1){
+    else if(props.selectedMenu===2){
         return (
             <div>
                 123
             </div>
         )
     }
-    else if(props.selectedMenu===2){
+    else if(props.selectedMenu===3){
         return (
             <div>
                 ppp

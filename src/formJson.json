@@ -1,0 +1,12 @@
+{
+    "Theme":{
+        "fields":[
+            {
+                "type":"colorPicker",
+                "label":"Theme Color",
+                "id":"ThemeColor",
+                "options":{}
+            }
+        ]
+    }
+}
