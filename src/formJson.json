@@ -19,9 +19,30 @@
     "CompanyInfo":{
         "fields":[
             {
+                "type":"Text",
+                "label":"Company Name",
+                "id":"companyName",
+                "options":{}
+            },
+            {
                 "type":"Imageupload",
                 "label":"Company Logo",
                 "id":"Companylogo",
+                "options":{}
+            }, {
+                "type":"Text",
+                "label":"About Us",
+                "id":"aboutUs",
+                "options":{}
+            }, {
+                "type":"Text",
+                "label":"Email",
+                "id":"email",
+                "options":{}
+            }, {
+                "type":"Text",
+                "label":"Contact Number",
+                "id":"contactNumber",
                 "options":{}
             }
            

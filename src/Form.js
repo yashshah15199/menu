@@ -1,35 +1,39 @@
-import React from 'react'
-import TextInput from './Form/TextInput'
-import ColorPicker from "./Form/ColorPicker"
-import Imageupload from "./Form/Imageupload"
+import React from "react";
+import TextInput from "./Form/TextInput";
+import ColorPicker from "./Form/ColorPicker";
+import Imageupload from "./Form/Imageupload";
 
 function Form(props) {
-    const {fldArr}=props
-    console.log(fldArr)
-    return (
-        <div>
-            {fldArr && fldArr.map((fld)=>{
-                if(fld.type==="colorPicker"){
-                    return(<ColorPicker fld={fld}/>)
-                }
-                if(fld.type==="Text"){
-                    return(
-                        <div>
-                            <TextInput fld={fld} />
-                            </div>
-                    )
-                }
-                if(fld.type==="Imageupload"){
-                    return(
-                        <div>
-                            <Imageupload fld={fld} />
-                            </div>
-                    )
-                }
-                
-            })}
-        </div>
-    )
+  const { fldArr } = props;
+  console.log(fldArr);
+  return (
+    <div className="row-fluid d-flex flex-wrap w-100">
+      {fldArr &&
+        fldArr.map((fld) => {
+          if (fld.type === "colorPicker") {
+            return (
+              <div className="col-md-4">
+                <ColorPicker fld={fld} dClass={props.dClass} />
+              </div>
+            );
+          }
+          if (fld.type === "Text") {
+            return (
+              <div className="col-md-4">
+                <TextInput fld={fld} dClass={props.dClass} />
+              </div>
+            );
+          }
+          if (fld.type === "Imageupload") {
+            return (
+              <div className="col-md-4">
+                <Imageupload fld={fld} dClass={props.dClass} />
+              </div>
+            );
+          }
+        })}
+    </div>
+  );
 }
 
-export default Form
+export default Form;
