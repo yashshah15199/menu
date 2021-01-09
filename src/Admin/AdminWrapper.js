@@ -1,3 +1,4 @@
+import { Typography } from '@material-ui/core';
 import React from 'react'
 import Form from "../Form";
 import JSON from "../formJson.json"
@@ -25,6 +26,9 @@ function AdminWrapper(props) {
     else if(props.selectedMenu===3){
         return (
             <div>
+                <div className="m-2" style={{width:"100%", textAlign:"center"}}>
+                    <Typography variant="h5"> Company Info</Typography>
+                </div>
                <Form
                     fldArr={JSON["CompanyInfo"].fields}
                />

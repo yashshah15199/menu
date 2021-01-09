@@ -12,21 +12,21 @@ function Form(props) {
         fldArr.map((fld) => {
           if (fld.type === "colorPicker") {
             return (
-              <div className="col-md-4">
+              <div className="col-md-4 mt-1">
                 <ColorPicker fld={fld} dClass={props.dClass} />
               </div>
             );
           }
           if (fld.type === "Text") {
             return (
-              <div className="col-md-4">
+              <div className="col-md-4 mt-1">
                 <TextInput fld={fld} dClass={props.dClass} />
               </div>
             );
           }
           if (fld.type === "Imageupload") {
             return (
-              <div className="col-md-4">
+              <div className="col-md-4 mt-1">
                 <Imageupload fld={fld} dClass={props.dClass} />
               </div>
             );
