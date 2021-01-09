@@ -6,6 +6,12 @@
                 "label":"Theme Color",
                 "id":"ThemeColor",
                 "options":{}
+            },
+            {
+                "type":"Text",
+                "label":"Product Name",
+                "id":"ProductId",
+                "options":{}
             }
         ]
     }
