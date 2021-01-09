@@ -24,7 +24,9 @@ function AdminWrapper(props) {
     else if(props.selectedMenu===3){
         return (
             <div>
-                ppp
+               <Form
+                    fldArr={JSON["CompanyInfo"].fields}
+               />
             </div>
         )
     }

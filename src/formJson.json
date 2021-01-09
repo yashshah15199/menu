@@ -13,6 +13,18 @@
                 "id":"ProductId",
                 "options":{}
             }
+           
+        ]
+    },
+    "CompanyInfo":{
+        "fields":[
+            {
+                "type":"Imageupload",
+                "label":"Company Logo",
+                "id":"Companylogo",
+                "options":{}
+            }
+           
         ]
     }
 }
