@@ -24,7 +24,7 @@ export default function BasicTextFields(props) {
   };
 
   return (
-    <form className={classes.root} noValidate autoComplete="off">
+    <form className={classes.root} noValidate autoComplete="off" style={{width:"98%"}}>
       {/* <TextField id="standard-basic" label="Standard" />
       <TextField id="filled-basic" label="Filled" variant="filled" /> */}
       <TextField

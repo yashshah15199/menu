@@ -11,7 +11,7 @@ const DataObj ={
             description: "double cheese with olives",
           },
         ],
-        SandWitch: [
+        SandWich: [
           { name: "Sandwitch", value: 100, description: "double cheese with olives" },
           {
             name: "club pizza",
@@ -22,7 +22,22 @@ const DataObj ={
       },
     logo:"",
     firmName:"Menu",
-    dataFontColor:"black"//for inside data
+    dataFontColor:"black",//for inside data,
+    fontStyle:"italic",//for data  font style
+    fontFamily:"cursive",//for data font style
+    footerfontStyle:"oblique",//for footer font style
+    footerfontFamily:"monospace"//for footer font style
+}
+const AdminJson={
+  field:[
+   {
+      label:"Product Name",
+    type:"text",
+    id:"ProductId"
+  
+  }
+
+  ]
 }
 
 export default DataObj;

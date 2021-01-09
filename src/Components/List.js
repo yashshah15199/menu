@@ -8,6 +8,7 @@ import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import Img from "../assests/images/product-1.jpg";
+import DataObj from "../Data"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,7 +34,7 @@ export default function AlignItemsList(props) {
     <List className={classes.root}>
       {data.map((fld) => {
         return (
-          <div>
+          <div style={{fontStyle:DataObj.fontStyle,fontFamily:DataObj.fontFamily}}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
                 <Avatar alt="Remy Sharp" src={Img} />
@@ -53,6 +54,11 @@ export default function AlignItemsList(props) {
                   </React.Fragment>
                 }
               />
+              {/* Ekta-To bring description in center */}
+              {/* <div style={{marginRight:"25%"}} >
+              {fld.description}
+              </div> */}
+              
               Rs.{fld.value}
             </ListItem>
             <Divider variant="inset" component="li" />
