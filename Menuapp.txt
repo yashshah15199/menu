@@ -1,0 +1,21 @@
+Menu Project
+1)Theme
+-->Theme Colour change--color picker
+-->Slider changes:--Table function
+	Add,update,Delete
+
+2)Manage Products
+-->product Title
+-->product Name
+-->Description
+-->rate
+-->Image
+
+
+3)About Company Info
+-->Name 
+-->logo
+-->Address
+-->Email
+-->contact number
+-->About Us
