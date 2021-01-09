@@ -15,17 +15,17 @@ function App() {
   const [list, setList] = useState(adata);
 
   const handleSearch = (value) => {
-    let adata = {};
+    let cdata = {};
     Object.keys(adata).map((fld) => {
       let arr = adata[fld].filter((fld) => {
         if (fld.name.toLowerCase().includes(value.toLowerCase())) {
           return 1;
         }
       });
-      adata[fld] = arr;
+      cdata[fld] = arr;
     });
 
-    setList(adata);
+    setList(cdata);
   };
 
   return (

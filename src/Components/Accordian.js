@@ -26,19 +26,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ControlledAccordions(props) {
+  console.log(props.data)
   const classes = useStyles();
-  const [data, setData] = React.useState(props.data);
+  let {data}=props
+  // const [data, setData] = React.useState(props.data);
+  const[update,doUpdate]=React.useState(true)
   console.log(data);
   useEffect(() => {
     if (props.data) {
-      setData(props.data);
+     // setData(props.data);
+     doUpdate(!update)
     }
   }, [props.data]);
 
   return (
     <div className={classes.root}>
-      {Object.keys(data).map((fld, index) => {
-        if (props.data[fld].length > 0) {
+      {data && Object.keys(data).map((fld, index) => {
+        if (data[fld]&&props.data[fld].length > 0) {
           return <SingleAcc data={props.data[fld]} fld={fld} />;
         }
       })}
@@ -48,7 +52,7 @@ export default function ControlledAccordions(props) {
 
 function SingleAcc(props) {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState("panel0");
+  const [expanded, setExpanded] = React.useState("panel");
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
