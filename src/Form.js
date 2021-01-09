@@ -1,5 +1,6 @@
 import React from 'react'
 import TextInput from './Form/TextInput'
+import ColorPicker from "./Form/ColorPicker"
 
 function Form(props) {
     const {fldArr}=props
@@ -8,7 +9,7 @@ function Form(props) {
         <div>
             {fldArr && fldArr.map((fld)=>{
                 if(fld.type==="colorPicker"){
-                    return(<div>Color</div>)
+                    return(<ColorPicker fld={fld}/>)
                 }
                 if(fld.type==="Text"){
                     return(
