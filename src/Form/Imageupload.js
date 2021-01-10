@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import { Typography } from "@material-ui/core";
 
 function Imageupload(props) {
     const [image,setImage]=useState(null)
@@ -18,6 +19,7 @@ reader.onload = function () {
     }
     return (
         <div >
+             <Typography style={{ marginTop: "1%" }}>{props.fld.label}</Typography>{" "}
             <div style={{width:"100%",marginTop:"1%"}}> {image && <img width="100px" height="100px" src={image}/>}</div>
            <div  style={{width:"100%", marginTop:"1%"}}><input type="file" onChange={handleChange}/></div>
             
