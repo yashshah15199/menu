@@ -4,6 +4,7 @@ import Form from "../Form";
 import JSON from "../formJson.json";
 import MultiData from "../Form/MultiForm";
 import DataObj from "../Data"
+import "./AdminWrapper.css"
 
 function AdminWrapper(props) {
   const[submit,setSubmit]=useState({})
@@ -21,6 +22,7 @@ function AdminWrapper(props) {
           fldArr={JSON["Theme"].fields}
           dClass={design}
           onChange={formChange}
+          fldsInRow={3}
         />
         <MultiData flds={JSON["Theme"].multiple} />
       </div>
@@ -43,13 +45,13 @@ function AdminWrapper(props) {
         <div className="m-2" style={{ width: "100%", textAlign: "center" }}>
           <Typography variant="h5"> Company Info</Typography>
         </div>
-        <Form fldArr={JSON["CompanyInfo"].fields} onChange={formChange} />
+        <Form fldArr={JSON["CompanyInfo"].fields} onChange={formChange}  fldsInRow={3}/>
         <div style={{padding:"1%"}}>
         <Button
-        className="button"
+        className="button m-3"
         variant="contained"
         onClick={handleSubmitclick}
-        style={{width:"15%",backgroundColor:DataObj.backGroundColor,color:DataObj.fontColor}}
+        style={{backgroundColor:DataObj.backGroundColor,color:DataObj.fontColor}}
       >
        Submit
       </Button>

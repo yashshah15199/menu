@@ -73,11 +73,28 @@ function MultiForm(props) {
     setOpen(true);
   };
   const handleSave = () => {
-    let arr = data;
-    arr.push(obj);
-    setData(arr);
+    if(index>-1){}
+    else{let arr = data;
+      arr.push(obj);
+      setData(arr);}
+    setIndex(-1);
     handleClose();
   };
+const [update,doUpdate]=React.useState(true)
+const [index,setIndex]=React.useState(-1)
+  const handleDelete=(index)=>{
+    let arr=data
+    arr.splice(index,1)
+    setData(arr)
+    doUpdate(!update)
+  }
+
+  const handleUpdate=(index)=>{
+    setIndex(index)
+    setOpen(true)
+
+  }
+
   return (
     <div className="m-2">
       <Button
@@ -96,15 +113,15 @@ function MultiForm(props) {
           {props.flds.Title}
         </DialogTitle>
         <DialogContent dividers>
-          <Form fldArr={props.flds.fields} onChange={formChange} />
+          <Form fldArr={props.flds.fields} onChange={formChange} fldsInRow={1} data={index>=0?data[index]:null}/>
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleSave} color="primary">
-            Save
+           {index>-1? "Update":"Save"}
           </Button>
         </DialogActions>
       </Dialog>
-      {data.map((fld) => {
+      {data.map((fld,index) => {
         return (
           <Paper elevation="2" style={{ borderRadius: "3%", margin: "1%" }}>
             <div className="w-100 d-flex m-1">
@@ -135,11 +152,11 @@ function MultiForm(props) {
                
               </div>
               <div className="d-flex" style={{ width: "25%" }}>
-                <IconButton>
-                  <EditIcon />
+                <IconButton >
+                  <EditIcon  onClick={()=>{handleUpdate(index)}}/>
                 </IconButton>
                 <IconButton>
-                  <DeleteIcon />
+                  <DeleteIcon onClick={()=>{handleDelete(index)}}/>
                 </IconButton>
               </div>
             </div>
