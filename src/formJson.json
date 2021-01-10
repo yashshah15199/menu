@@ -24,7 +24,7 @@
             },
             {
                 "type":"Imageupload",
-                "label":"Image",
+                "label":"Company Logo",
                 "id":"silderImage",
                 "options":{}
             }

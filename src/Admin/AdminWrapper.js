@@ -18,6 +18,9 @@ function AdminWrapper(props) {
     
     return (
       <div>
+          <div className="m-2" style={{ width: "97%", textAlign: "center" ,border:"1px solid black",borderRadius:"3%"}}>
+          <Typography variant="h5" style={{fontFamily:"cursive"}}>Theme Settings</Typography>
+        </div>
         <Form
           fldArr={JSON["Theme"].fields}
           dClass={design}
@@ -28,7 +31,9 @@ function AdminWrapper(props) {
       </div>
     );
   } else if (props.selectedMenu === 2) {
-    return <div>123</div>;
+    return <div> <div className="m-2" style={{ width: "97%", textAlign: "center" ,border:"1px solid black",borderRadius:"3%"}}>
+    <Typography variant="h5" style={{fontFamily:"cursive"}}>Products</Typography>
+  </div></div>;
   } else if (props.selectedMenu === 3) {
     
     let obj = {};
@@ -42,10 +47,13 @@ function AdminWrapper(props) {
     }
     return (
       <div>
-        <div className="m-2" style={{ width: "100%", textAlign: "center" }}>
-          <Typography variant="h5"> Company Info</Typography>
+        <div className="m-2" style={{ width: "97%", textAlign: "center" ,border:"1px solid black",borderRadius:"3%"}}>
+          <Typography variant="h5" style={{fontFamily:"cursive"}}> Company Info</Typography>
         </div>
+        <div style={{padding:"1%"}}>
         <Form fldArr={JSON["CompanyInfo"].fields} onChange={formChange}  fldsInRow={3}/>
+        </div>
+       
         <div style={{padding:"1%"}}>
         <Button
         className="button m-3"
