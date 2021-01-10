@@ -27,24 +27,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-let data={
-    Pizza: [
-      { name: "pizza", value: 100, description: "double cheese with olives" },
-      {
-        name: "margerate pizza",
-        value: 200,
-        description: "double cheese with olives",
-      },
-    ],
-    SandWich: [
-      { name: "Sandwitch", value: 100, description: "double cheese with olives" },
-      {
-        name: "club pizza",
-        value: 200,
-        description: "double cheese with olives",
-      },
-    ],
-}
+let data={}
+// {
+//     Pizza: [
+//       { name: "pizza", value: 100, description: "double cheese with olives" },
+//       {
+//         name: "margerate pizza",
+//         value: 200,
+//         description: "double cheese with olives",
+//       },
+//     ],
+//     SandWich: [
+//       { name: "Sandwitch", value: 100, description: "double cheese with olives" },
+//       {
+//         name: "club pizza",
+//         value: 200,
+//         description: "double cheese with olives",
+//       },
+//     ],
+// }
 
 export default function ControlledAccordions(props) {
  

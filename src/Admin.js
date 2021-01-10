@@ -5,7 +5,7 @@ import AdminWrapper from "./Admin/AdminWrapper"
 
 function Admin() {
     const [isLogin,setIsLogin]=useState(true)
-    const [selectedMenu,setSelectedMenu]=useState(null)
+    const [selectedMenu,setSelectedMenu]=useState(2)
     const handleLogin=(value)=>{
         setIsLogin(value);
     }
