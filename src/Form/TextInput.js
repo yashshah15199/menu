@@ -6,6 +6,7 @@ function TextInput(props) {
   const [value, setValue] = useState(" ");
   const handleTextChange = (e) => {
     setValue(e.target.value);
+    props.onChange(e.target.value,fld.id)
   };
 
   return (

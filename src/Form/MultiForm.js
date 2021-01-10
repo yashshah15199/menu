@@ -8,8 +8,8 @@ import MuiDialogActions from "@material-ui/core/DialogActions";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
-import EditIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from "@material-ui/icons/Edit";
+import DeleteIcon from "@material-ui/icons/Delete";
 import Form from "../Form";
 
 const styles = (theme) => ({
@@ -58,12 +58,25 @@ const DialogActions = withStyles((theme) => ({
 
 function MultiForm(props) {
   const [open, setOpen] = React.useState(false);
+  const [data, setData] = React.useState([]);
+  let obj = {};
+  const formChange = (value, id) => {
+    console.log(value, id);
+    obj[id] = value;
+  };
 
   const handleClose = () => {
     setOpen(false);
   };
   const handleButtonClick = () => {
+    obj = {};
     setOpen(true);
+  };
+  const handleSave = () => {
+    let arr = data;
+    arr.push(obj);
+    setData(arr);
+    handleClose();
   };
   return (
     <div className="m-2">
@@ -83,40 +96,56 @@ function MultiForm(props) {
           {props.flds.Title}
         </DialogTitle>
         <DialogContent dividers>
-          <Form fldArr={props.flds.fields} />
+          <Form fldArr={props.flds.fields} onChange={formChange} />
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose} color="primary">
+          <Button autoFocus onClick={handleSave} color="primary">
             Save
           </Button>
         </DialogActions>
       </Dialog>
-     <Paper elevation="2" style={{borderRadius:"3%", margin:"1%"}}>
-         <div className="w-100 d-flex m-1">
-             <div style={{width:"75%", margin:"1%"}}>
-             <div className="d-flex">
-         <Typography variant="subtitle1">Title:</Typography>
-         <Typography variant="subtitle1">{" "+"Abc"}</Typography>
-
-         </div>
-         <div className="d-flex ">
-         <Typography variant="subtitle1">Sub Title:</Typography>
-         <Typography variant="subtitle1">{" "+"Abc"}</Typography>
-
-         </div>
-             </div>
-             <div className="d-flex" style={{width:"25%"}}>
-                 <IconButton>
-<EditIcon/>
-                 </IconButton>
-                 <IconButton>
-<DeleteIcon/>
-                 </IconButton>
-             </div>
-         </div>
-         
-
-     </Paper>
+      {data.map((fld) => {
+        return (
+          <Paper elevation="2" style={{ borderRadius: "3%", margin: "1%" }}>
+            <div className="w-100 d-flex m-1">
+              <div style={{ width: "75%", margin: "1%" }}>
+                {Object.keys(fld).map((val) => {
+                  if (val === "silderImage") {
+                    return (
+                      <div className="d-flex">
+                        <Typography variant="subtitle1">
+                          {val + ": "}
+                        </Typography>
+                        <img height="100px" width="100px" src={fld[val]}></img>
+                      </div>
+                    );
+                  } else {
+                    return (
+                      <div className="d-flex">
+                        <Typography variant="subtitle1">
+                          {val + ": "}
+                        </Typography>
+                        <Typography variant="subtitle1">
+                          {" " + fld[val]}
+                        </Typography>
+                      </div>
+                    );
+                  }
+                })}
+               
+              </div>
+              <div className="d-flex" style={{ width: "25%" }}>
+                <IconButton>
+                  <EditIcon />
+                </IconButton>
+                <IconButton>
+                  <DeleteIcon />
+                </IconButton>
+              </div>
+            </div>
+          </Paper>
+        );
+      })}
     </div>
   );
 }

@@ -5,7 +5,7 @@ import Imageupload from "./Form/Imageupload";
 
 function Form(props) {
   const { fldArr } = props;
-  console.log(fldArr);
+  console.log(props);
   return (
     <div className="row-fluid d-flex flex-wrap w-100">
       {fldArr &&
@@ -13,21 +13,21 @@ function Form(props) {
           if (fld.type === "colorPicker") {
             return (
               <div className="col-md-4 mt-1">
-                <ColorPicker fld={fld} dClass={props.dClass} />
+                <ColorPicker fld={fld} dClass={props.dClass} onChange={props.onChange}/>
               </div>
             );
           }
           if (fld.type === "Text") {
             return (
               <div className="col-md-4 mt-1">
-                <TextInput fld={fld} dClass={props.dClass} />
+                <TextInput fld={fld} dClass={props.dClass} onChange={props.onChange}/>
               </div>
             );
           }
           if (fld.type === "Imageupload") {
             return (
               <div className="col-md-4 mt-1">
-                <Imageupload fld={fld} dClass={props.dClass} />
+                <Imageupload fld={fld} dClass={props.dClass} onChange={props.onChange}/>
               </div>
             );
           }

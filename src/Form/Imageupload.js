@@ -11,6 +11,7 @@ reader.readAsDataURL(file);
 reader.onload = function () {
     console.log(reader.result);//base64encoded string
     setImage(reader.result)
+    props.onChange(reader.result,props.fld.id)
 };
    
   

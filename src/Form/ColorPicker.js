@@ -8,6 +8,7 @@ function ColorPicker(props) {
   const handleChange = (e) => {
     console.log(e.target.value);
     setColor(e.target.value);
+    props.onChange(e.target.value,fld.id)
   };
   return (
     <div className="d-flex">
