@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@material-ui/core";
-import "./MultiForm.css";
+
 import { Dialog, withStyles, Paper } from "@material-ui/core";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import MuiDialogContent from "@material-ui/core/DialogContent";
@@ -10,6 +10,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import Form from "../Form";
 import DataObj from "../Data"
 
@@ -92,10 +93,14 @@ function MultiForm(props) {
   const [update, doUpdate] = React.useState(true);
   const [index, setIndex] = React.useState(-1);
   const handleDelete = (index) => {
-    let arr = data;
-    arr.splice(index, 1);
-    setData(arr);
-    doUpdate(!update);
+  
+    if(  window.confirm("Do You want to Delete this Product")){
+      let arr = data;
+      arr.splice(index, 1);
+      setData(arr);
+      doUpdate(!update);
+    }
+    
   };
 
   const handleUpdate = (index) => {
@@ -106,15 +111,26 @@ function MultiForm(props) {
   };
 
   return (
-    <div className="w-100 m-2">
-      <Button
-        className="button"
-        variant="contained"
-        style={{backgroundColor:DataObj.backGroundColor,color:DataObj.fontColor,width:"98%", margin:"1%"}}
-        onClick={handleButtonClick}
-      >
-        Add {" " + props.flds.Title}
-      </Button>
+  
+    <div className="w-100 m-2 ">
+      <div className="d-flex">
+      <div className="mt-2">
+
+<Typography > Add {" " + props.flds.Title}</Typography>
+</div>
+<div>
+<IconButton
+    aria-label="Add"
+    // className={classes.closeButton}
+    onClick={handleButtonClick}
+  >
+    <AddCircleOutlineIcon />
+  </IconButton>
+</div>
+      </div>
+   
+      
+     
       <Dialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
@@ -139,8 +155,8 @@ function MultiForm(props) {
       </Dialog>
       {data.map((fld, index) => {
         return (
-          <Paper elevation="2" style={{ borderRadius: "3%", margin: "1%" }}>
-            <div className="w-100 d-flex m-1">
+          <Paper elevation="2" style={{ width:"97%" ,borderRadius: "3%"}}>
+            <div className="w-98 d-flex m-1">
               <div style={{ width: "75%", margin: "1%" }}>
                 {Object.keys(fld).map((val) => {
                   if (val === "silderImage") {
