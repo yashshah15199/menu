@@ -2,6 +2,7 @@ import { Typography } from '@material-ui/core';
 import React from 'react'
 import Form from "../Form";
 import JSON from "../formJson.json"
+import MultiData from "../Form/MultiForm"
 
 function AdminWrapper(props) {
     const design="col-lg-6 col-md-6 col-sm-12"
@@ -13,6 +14,7 @@ function AdminWrapper(props) {
                     fldArr={JSON["Theme"].fields}
                     dClass={design}
                />
+               <MultiData flds={JSON["Theme"].multiple}/>
             </div>
         )
     }

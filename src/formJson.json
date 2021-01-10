@@ -6,15 +6,29 @@
                 "label":"Theme Color",
                 "id":"ThemeColor",
                 "options":{}
-            },
+            }
+        ],
+        "multiple":{
+            "Title":"Slider Content",
+            "fields":[
             {
                 "type":"Text",
-                "label":"Product Name",
-                "id":"ProductId",
+                "label":"Title",
+                "id":"title",
+                "options":{}
+            }, {
+                "type":"Text",
+                "label":"Sub Tile",
+                "id":"subTitle",
+                "options":{}
+            },
+            {
+                "type":"Imageupload",
+                "label":"Image",
+                "id":"silderImage",
                 "options":{}
             }
-           
-        ]
+        ]}
     },
     "CompanyInfo":{
         "fields":[
