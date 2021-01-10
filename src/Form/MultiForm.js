@@ -159,7 +159,7 @@ function MultiForm(props) {
             <div className="w-98 d-flex m-1">
               <div style={{ width: "75%", margin: "1%" }}>
                 {Object.keys(fld).map((val) => {
-                  if (val === "silderImage") {
+                  if (val === "silderImage"||val==="productPicture") {
                     return (
                       <div className="d-flex">
                         <Typography variant="subtitle1">
