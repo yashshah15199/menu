@@ -39,11 +39,6 @@
                 "options":{}
             },
             {
-                "type":"Imageupload",
-                "label":"Company Logo",
-                "id":"Companylogo",
-                "options":{}
-            }, {
                 "type":"Text",
                 "label":"About Us",
                 "id":"aboutUs",
@@ -58,8 +53,42 @@
                 "label":"Contact Number",
                 "id":"contactNumber",
                 "options":{}
+            }, {
+                "type":"Imageupload",
+                "label":"Company Logo",
+                "id":"Companylogo",
+                "options":{}
             }
            
         ]
+    },
+    "Product":{
+        "multiple":{
+            "Title":"Product",
+            "fields":[
+            {
+                "type":"Text",
+                "label":"Name",
+                "id":"name",
+                "options":{}
+            }, {
+                "type":"Text",
+                "label":"Description",
+                "id":"description",
+                "options":{}
+            },
+            {
+                "type":"Imageupload",
+                "label":"Product picture",
+                "id":"productPicture",
+                "options":{}
+            },
+            { "type":"Text",
+                "label":"Price",
+                "id":"price",
+                "options":{}
+
+            }
+        ]}
     }
 }

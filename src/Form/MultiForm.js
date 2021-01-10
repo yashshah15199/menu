@@ -11,6 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Form from "../Form";
+import DataObj from "../Data"
 
 const styles = (theme) => ({
   root: {
@@ -55,20 +56,20 @@ const DialogActions = withStyles((theme) => ({
     padding: theme.spacing(1),
   },
 }))(MuiDialogActions);
-let obj={};
+let obj = {};
 
 function MultiForm(props) {
   const [open, setOpen] = React.useState(false);
   const [data, setData] = React.useState([]);
   const formChange = (value, id) => {
-    console.log("Obj",obj)
-    obj=obj?obj:{};
+    console.log("Obj", obj);
+    obj = obj ? obj : {};
     console.log(value, id);
     obj[id] = value;
   };
 
   const handleClose = () => {
-    setIndex(-1)
+    setIndex(-1);
     setOpen(false);
   };
   const handleButtonClick = () => {
@@ -76,39 +77,40 @@ function MultiForm(props) {
     setOpen(true);
   };
   const handleSave = () => {
-    if(index>-1){
+    if (index > -1) {
       let arr = data;
-      arr[index]=obj
-      setData(arr)
-    }
-    else{let arr = data;
+      arr[index] = obj;
+      setData(arr);
+    } else {
+      let arr = data;
       arr.push(obj);
-      setData(arr);}
+      setData(arr);
+    }
     setIndex(-1);
     handleClose();
   };
-const [update,doUpdate]=React.useState(true)
-const [index,setIndex]=React.useState(-1)
-  const handleDelete=(index)=>{
-    let arr=data
-    arr.splice(index,1)
-    setData(arr)
-    doUpdate(!update)
-  }
+  const [update, doUpdate] = React.useState(true);
+  const [index, setIndex] = React.useState(-1);
+  const handleDelete = (index) => {
+    let arr = data;
+    arr.splice(index, 1);
+    setData(arr);
+    doUpdate(!update);
+  };
 
-  const handleUpdate=(index)=>{
-    obj=data[index]
-    console.log(obj)
-    setIndex(index)
-    setOpen(true)
-
-  }
+  const handleUpdate = (index) => {
+    obj = data[index];
+    console.log(obj);
+    setIndex(index);
+    setOpen(true);
+  };
 
   return (
-    <div className="m-2">
+    <div className="w-100 m-2">
       <Button
         className="button"
         variant="contained"
+        style={{backgroundColor:DataObj.backGroundColor,color:DataObj.fontColor,width:"98%", margin:"1%"}}
         onClick={handleButtonClick}
       >
         Add {" " + props.flds.Title}
@@ -122,15 +124,20 @@ const [index,setIndex]=React.useState(-1)
           {props.flds.Title}
         </DialogTitle>
         <DialogContent dividers>
-          <Form fldArr={props.flds.fields} onChange={formChange} fldsInRow={1} data={index>=0?data[index]:null}/>
+          <Form
+            fldArr={props.flds.fields}
+            onChange={formChange}
+            fldsInRow={1}
+            data={index >= 0 ? data[index] : null}
+          />
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleSave} color="primary">
-           {index>-1? "Update":"Save"}
+            {index > -1 ? "Update" : "Save"}
           </Button>
         </DialogActions>
       </Dialog>
-      {data.map((fld,index) => {
+      {data.map((fld, index) => {
         return (
           <Paper elevation="2" style={{ borderRadius: "3%", margin: "1%" }}>
             <div className="w-100 d-flex m-1">
@@ -148,24 +155,31 @@ const [index,setIndex]=React.useState(-1)
                   } else {
                     return (
                       <div className="d-flex">
-                        <Typography variant="subtitle1">
+                        <Typography variant="subtitle1" style={{fontFamily:"cursive"}}>
                           {val + ": "}
                         </Typography>
-                        <Typography variant="subtitle1">
+                        <Typography variant="subtitle1" style={{fontFamily:"cursive"}}>
                           {" " + fld[val]}
                         </Typography>
                       </div>
                     );
                   }
                 })}
-               
               </div>
               <div className="d-flex" style={{ width: "25%" }}>
-                <IconButton >
-                  <EditIcon  onClick={()=>{handleUpdate(index)}}/>
+                <IconButton>
+                  <EditIcon
+                    onClick={() => {
+                      handleUpdate(index);
+                    }}
+                  />
                 </IconButton>
                 <IconButton>
-                  <DeleteIcon onClick={()=>{handleDelete(index)}}/>
+                  <DeleteIcon
+                    onClick={() => {
+                      handleDelete(index);
+                    }}
+                  />
                 </IconButton>
               </div>
             </div>

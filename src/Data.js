@@ -28,16 +28,5 @@ const DataObj ={
     footerfontStyle:"oblique",//for footer font style
     footerfontFamily:"monospace"//for footer font style
 }
-const AdminJson={
-  field:[
-   {
-      label:"Product Name",
-    type:"text",
-    id:"ProductId"
-  
-  }
-
-  ]
-}
 
 export default DataObj;
