@@ -3,8 +3,8 @@ import { Typography, TextField } from "@material-ui/core";
 
 function ColorPicker(props) {
   console.log(props);
-  const { fld } = props;
-  const [color, setColor] = useState(null);
+  const { fld,val } = props;
+  const [color, setColor] = useState(val?val:null);
   const handleChange = (e) => {
     console.log(e.target.value);
     setColor(e.target.value);

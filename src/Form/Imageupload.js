@@ -2,7 +2,9 @@ import React,{useState} from 'react'
 import { Typography } from "@material-ui/core";
 
 function Imageupload(props) {
-    const [image,setImage]=useState(null)
+    const {val}=props
+    const [image,setImage]=useState(val?val:null)
+    
     const handleChange=(e)=>{
         let reader = new FileReader();
     let file = e.target.files[0];

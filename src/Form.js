@@ -13,21 +13,21 @@ function Form(props) {
           if (fld.type === "colorPicker") {
             return (
               <div className={`col-md-${12/fldsInRow} mt-1`}>
-                <ColorPicker fld={fld} dClass={props.dClass} onChange={props.onChange}/>
+                <ColorPicker fld={fld} dClass={props.dClass} onChange={props.onChange} val={props.data && props.data[fld.id]}/>
               </div>
             );
           }
           if (fld.type === "Text") {
             return (
               <div className={`col-md-${12/fldsInRow} mt-1`}>
-                <TextInput fld={fld} dClass={props.dClass} onChange={props.onChange}/>
+                <TextInput fld={fld} dClass={props.dClass} onChange={props.onChange} val={props.data && props.data[fld.id]}/>
               </div>
             );
           }
           if (fld.type === "Imageupload") {
             return (
               <div className={`col-md-${12/fldsInRow} mt-1`}>
-                <Imageupload fld={fld} dClass={props.dClass} onChange={props.onChange}/>
+                <Imageupload fld={fld} dClass={props.dClass} onChange={props.onChange} val={props.data && props.data[fld.id]}/>
               </div>
             );
           }

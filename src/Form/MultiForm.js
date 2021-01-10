@@ -55,17 +55,20 @@ const DialogActions = withStyles((theme) => ({
     padding: theme.spacing(1),
   },
 }))(MuiDialogActions);
+let obj={};
 
 function MultiForm(props) {
   const [open, setOpen] = React.useState(false);
   const [data, setData] = React.useState([]);
-  let obj = {};
   const formChange = (value, id) => {
+    console.log("Obj",obj)
+    obj=obj?obj:{};
     console.log(value, id);
     obj[id] = value;
   };
 
   const handleClose = () => {
+    setIndex(-1)
     setOpen(false);
   };
   const handleButtonClick = () => {
@@ -73,7 +76,11 @@ function MultiForm(props) {
     setOpen(true);
   };
   const handleSave = () => {
-    if(index>-1){}
+    if(index>-1){
+      let arr = data;
+      arr[index]=obj
+      setData(arr)
+    }
     else{let arr = data;
       arr.push(obj);
       setData(arr);}
@@ -90,6 +97,8 @@ const [index,setIndex]=React.useState(-1)
   }
 
   const handleUpdate=(index)=>{
+    obj=data[index]
+    console.log(obj)
     setIndex(index)
     setOpen(true)
 
