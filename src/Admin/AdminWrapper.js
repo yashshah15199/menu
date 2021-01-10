@@ -5,6 +5,7 @@ import JSON from "../formJson.json";
 import MultiData from "../Form/MultiForm";
 import DataObj from "../Data"
 import "./AdminWrapper.css"
+import Product from "./Product"
 
 function AdminWrapper(props) {
   const[submit,setSubmit]=useState({})
@@ -33,7 +34,13 @@ function AdminWrapper(props) {
   } else if (props.selectedMenu === 2) {
     return <div> <div className="m-2" style={{ width: "97%", textAlign: "center" ,border:"1px solid black",borderRadius:"3%"}}>
     <Typography variant="h5" style={{fontFamily:"cursive"}}>Products</Typography>
-  </div></div>;
+
+  </div>
+  <div>
+  <Product/>
+  </div>
+ 
+  </div>;
   } else if (props.selectedMenu === 3) {
     
     let obj = {};
