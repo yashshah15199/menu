@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import User from "./User"
 import Admin from "./Admin"
 import {
@@ -8,8 +8,10 @@ import {
   Link,
   useParams
 } from "react-router-dom";
+import DataObj from "./Data"
 
 function App() {
+  
   return (
     <div>
       <Router>

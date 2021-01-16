@@ -59,7 +59,7 @@ export default function AlignItemsList(props) {
               {fld.description}
               </div> */}
               
-              Rs.{fld.value}
+              Rs.{fld.price}
             </ListItem>
             <Divider variant="inset" component="li" />
           </div>

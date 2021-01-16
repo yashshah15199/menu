@@ -11,7 +11,8 @@ import Footer from "./Components/Footer"
 import DataObj from "./Data";
 
 function App() {
-  let adata = DataObj.data;
+ 
+  let adata=DataObj["data"]=JSON.parse(localStorage.getItem("Product"));
   const [list, setList] = useState(adata);
 
   const handleSearch = (value) => {
