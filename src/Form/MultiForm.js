@@ -78,15 +78,17 @@ function MultiForm(props) {
     setOpen(true);
   };
   const handleSave = () => {
+    let arr=[]
     if (index > -1) {
-      let arr = data;
+       arr = data;
       arr[index] = obj;
       setData(arr);
     } else {
-      let arr = data;
+       arr = data;
       arr.push(obj);
       setData(arr);
     }
+    props.onChange(arr,props.id)
     setIndex(-1);
     handleClose();
   };
@@ -97,6 +99,7 @@ function MultiForm(props) {
     if(  window.confirm("Do You want to Delete this Product")){
       let arr = data;
       arr.splice(index, 1);
+      props.onChange(arr,props.id)
       setData(arr);
       doUpdate(!update);
     }

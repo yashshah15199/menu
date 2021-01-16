@@ -46,13 +46,19 @@ let data={}
 //       },
 //     ],
 // }
-
+let obj={}
 export default function ControlledAccordions(props) {
  
   const classes = useStyles();
   // const [data, setData] = React.useState(props.data);
   const[update,doUpdate]=React.useState(true)
 const [val,setVal]=React.useState("")
+
+const handleDoChange=(value,id)=>{
+  obj[id]=value;
+  props.onChange(obj,"Product")
+}
+
   return (
     <div className="m-2">
         <div className="m-2">
@@ -77,7 +83,7 @@ onClick={()=>{
         </div>
        
       {Object.keys(data).map((fld)=>{
-          return( <SingleAcc name={fld} value={data[fld]}/>)
+          return( <SingleAcc name={fld} value={data[fld]} onChange={handleDoChange}/>)
       })}
      
     </div>
@@ -90,6 +96,9 @@ function SingleAcc(props) {
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
+  const handleDChange=(value,id)=>{
+props.onChange(value,id)
+  }
   return (
     <div style={{ marginTop: "2%" }}>
       <Accordion
@@ -111,7 +120,7 @@ function SingleAcc(props) {
           {/* <Typography className={classes.secondaryHeading}>I am an accordion</Typography> */}
         </AccordionSummary>
         <AccordionDetails>
-        <MultiData flds={JSON["Product"].multiple} />
+        <MultiData flds={JSON["Product"].multiple} onChange={handleDChange} id={props.name}/>
           {/* <List data={props.data} /> */}
         </AccordionDetails>
       </Accordion>
