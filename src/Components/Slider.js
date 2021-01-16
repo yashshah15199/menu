@@ -1,6 +1,8 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import Image from "../assests/images/slider-1.jpg";
+import Image1 from "../assests/images/history1.jpeg";
+
 
 function Slider() {
   return (
@@ -9,7 +11,7 @@ function Slider() {
         <div class="container-fluid p-0">
           <Carousel>
             <Carousel.Item>
-              <img src={Image} class="opacity d-block w-100" alt="..." />
+              <img src={Image} style={{width:window.innerWidth, height:window.innerHeight/2}}  alt="..." />
               <Carousel.Caption>
                 <h3>First slide label</h3>
                 <p>
@@ -19,7 +21,7 @@ function Slider() {
             </Carousel.Item>
 
             <Carousel.Item>
-              <img src={Image} class="opacity d-block w-100" alt="..." />
+              <img src={Image1} style={{width:window.innerWidth, height:window.innerHeight/2}} alt="..." />
               <Carousel.Caption>
                 <h3>First slide label</h3>
                 <p>
