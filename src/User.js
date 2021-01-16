@@ -13,6 +13,7 @@ import DataObj from "./Data";
 function App() {
  
   let adata=DataObj["data"]=JSON.parse(localStorage.getItem("Product"));
+   DataObj["Theme"]=JSON.parse(localStorage.getItem("Theme"));
   const [list, setList] = useState(adata);
 
   const handleSearch = (value) => {

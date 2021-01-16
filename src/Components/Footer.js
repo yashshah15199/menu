@@ -6,6 +6,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import DataObj from "../Data"
 
 function Footer() {
+  let data=JSON.parse(localStorage.getItem("companyInfo"))
     return (
         <div style={{marginTop:"2%"}}>
           <footer>
@@ -14,7 +15,9 @@ function Footer() {
       <div class="row">
       <div class="col-md-6">
             <h6 style={{color:DataObj.fontColor}}>ABOUT</h6>
-            <p style={{color:DataObj.fontColor,fontFamily:DataObj.footerfontFamily,fontStyle:DataObj.footerfontStyle}} class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+            <p style={{color:DataObj.fontColor,fontFamily:DataObj.footerfontFamily,fontStyle:DataObj.footerfontStyle}} class="text-justify">
+           {data.aboutUs}
+            </p>
           </div>
 
 <div class="col-md-2"></div>
@@ -25,15 +28,18 @@ function Footer() {
              
               <div class="location-w mb-3">
                 <div class="location-icon"><PinDropIcon style={{color:DataObj.fontColor}}></PinDropIcon></div>
-               <div class="location-text" style={{color:DataObj.fontColor, fontColor:"white", textDecoration:"none",cursor:"pointer",fontFamily:DataObj.footerfontFamily,fontStyle:DataObj.footerfontStyle}}><a >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam totam dicta nihil, sequi perferendis eligendi ipsam voluptatibus similique sapiente eos earum optio nemo laborum et saepe autem illum, itaque harum?</a></div>
+               <div class="location-text" style={{color:DataObj.fontColor, fontColor:"white", textDecoration:"none",cursor:"pointer",fontFamily:DataObj.footerfontFamily,fontStyle:DataObj.footerfontStyle}}>
+                 <a >
+{data.address}                  
+</a></div>
               </div>
               <div class="location-w mb-3">
                 <div class="location-icon"><CallIcon style={{color:DataObj.fontColor}}/></div>
-               <div class="location-text" style={{color:DataObj.fontColor, fontColor:"white", textDecoration:"none", cursor:"pointer",fontFamily:DataObj.footerfontFamily,fontStyle:DataObj.footerfontStyle}}><a >+7265985208</a></div>
+               <div class="location-text" style={{color:DataObj.fontColor, fontColor:"white", textDecoration:"none", cursor:"pointer",fontFamily:DataObj.footerfontFamily,fontStyle:DataObj.footerfontStyle}}><a >{data.contactNumber}</a></div>
               </div>
               <div class="location-w mb-3">
                 <div class="location-icon"><MailIcon style={{color:DataObj.fontColor}}/></div>
-               <div class="location-text" style={{color:DataObj.fontColor, fontColor:"white", textDecoration:"none",cursor:"pointer",fontFamily:DataObj.footerfontFamily,fontStyle:DataObj.footerfontStyle}}><a onClick={()=>{window.open("mailto:yash@gmail.com")}}>yash@gmail.com</a></div>
+               <div class="location-text" style={{color:DataObj.fontColor, fontColor:"white", textDecoration:"none",cursor:"pointer",fontFamily:DataObj.footerfontFamily,fontStyle:DataObj.footerfontStyle}}><a onClick={()=>{window.open("mailto:yash@gmail.com")}}>{data.email}</a></div>
               </div>
               
              

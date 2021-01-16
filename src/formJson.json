@@ -40,6 +40,12 @@
             },
             {
                 "type":"Text",
+                "label":"Address",
+                "id":"address",
+                "options":{}
+            },
+            {
+                "type":"Text",
                 "label":"About Us",
                 "id":"aboutUs",
                 "options":{}
